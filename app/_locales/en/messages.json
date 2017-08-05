@@ -1,0 +1,18 @@
+{
+  "appName": {
+    "message": "HuntHelper button",
+    "description": "The name of the application"
+  },
+  "appShortName": {
+    "message": "hunthelper_import",
+    "description": "The short_name (maximum of 12 characters recommended) is a short version of the app's name."
+  },
+  "appDescription": {
+    "message": "Add the address of the current page to your HuntHelper hunt",
+    "description": "The description of the application"
+  },
+  "browserActionTitle": {
+    "message": "Add to HuntHelper",
+    "description": "The title of the browser action button"
+  }
+}

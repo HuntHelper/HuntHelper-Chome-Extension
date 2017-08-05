@@ -1,0 +1,8 @@
+@import 'cooper_hewitt.scss';
+$primary: #FF6800;
+$navbar-background-color: $primary;
+$family-sans-serif: "CooperHewitt", -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto",
+"Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans",
+"Helvetica Neue", "Helvetica", "Arial", sans-serif;
+$weight-semibold: 600;
+@import "../../node_modules/bulma/bulma.sass";
