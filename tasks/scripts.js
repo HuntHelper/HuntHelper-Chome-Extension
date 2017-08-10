@@ -27,7 +27,9 @@ gulp.task('scripts', (cb) => {
             'NODE_ENV': JSON.stringify(ENV)
           },
           '__ENV__': JSON.stringify(ENV),
-          '__VENDOR__': JSON.stringify(args.vendor)
+          '__VENDOR__': JSON.stringify(args.vendor),
+          '__HOST__': JSON.stringify(ENV == 'production' ? 'https://www.hunthelper.com' : 'https://localhost.ssl:5000'),
+          'HH_ENVIRONMENT': JSON.stringify(ENV)
         }),
       ].concat(args.production ? [
         new webpack.optimize.UglifyJsPlugin()

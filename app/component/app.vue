@@ -13,18 +13,18 @@ div
         .control
           input.input(
             type='text'
-            v-model='email'
+            v-model='form.email'
           )
       .field
         label.label Password
         .control
           input.input(
             type='password'
-            v-model='password'
+            v-model='form.password'
           )
       .field
         .control
-          button.button.is-primary Submit
+          button.button.is-primary(@click='submitLogin' :class='submitClass') Submit
 </template>
 
 <script>
@@ -32,14 +32,31 @@ div
     // Options / Data
     data () {
     	return {
-        email: '',
-        loggedIn: false,
-        password: ''
+        form: {
+          email: '',
+          password: ''
+        },
+        loading: false,
+        loggedIn: false
       }
     },
     // props: [],
-    // computed: {},
-    // methods: {},
+    computed: {
+      submitClass: function() {
+        this.loading ? ['is-loading'] : []
+      }
+    },
+    methods: {
+      submitLogin: function() {
+        this.loading = true
+        this.$store.dispatch('HUNTER_LOGIN', [this.form]).then(() => {
+          this.loading = false
+        }, (err) => {
+          this.error = err.message
+          this.loading = false
+        })
+      },
+    },
     // watch: {},
     // Options / DOM
     // el () {},
