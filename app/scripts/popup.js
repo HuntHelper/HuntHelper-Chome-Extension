@@ -25,7 +25,6 @@ var app=new Vue({
   store,
   render: h =>h(Popup)
 })
-console.log(process.env.NODE_ENV)
-if (__ENV__ != 'production') { //eslint-disable-line
-  window.app = app
-}
+// console.log(HH_ENVIRONMENT)
+// if (HH_ENVIRONMENT != 'production')
+window.app = app // TODO: remove before releasing

@@ -2,7 +2,7 @@
   "name": "__MSG_appName__",
   "short_name": "__MSG_appShortName__",
   "description": "__MSG_appDescription__",
-  "version": "0.0.1",
+  "version": "0.0.3",
   "manifest_version": 2,
   "default_locale": "en",
   "__chrome__minimum_chrome_version": "33",
@@ -48,7 +48,7 @@
     "fonts/CooperHewitt-*.woff"
   ],
   "__chrome__oauth2": {
-    "client_id": "3b05b87fd28142bd20c2f71c17fda908fe4dd320d6d876036834b36a34367d17",
+    "client_id": "219e639f90beb37988c9ae2ce50fa1e076c2c93c2e82c464cb5339ff339d1018",
     "scopes": [
       "https://localhost.ssl:5000/api/hunts"
     ]

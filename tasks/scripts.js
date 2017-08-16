@@ -10,6 +10,8 @@ import args from './lib/args';
 
 const ENV = args.production ? 'production' : 'development';
 
+const packHost = args.production ? 'https://www.hunthelper.com' : 'https://localhost.ssl:5000'
+
 gulp.task('scripts', (cb) => {
   return gulp.src(['app/scripts/*.js'])
     .pipe(plumber({
@@ -28,8 +30,8 @@ gulp.task('scripts', (cb) => {
           },
           '__ENV__': JSON.stringify(ENV),
           '__VENDOR__': JSON.stringify(args.vendor),
-          '__HOST__': JSON.stringify(ENV == 'production' ? 'https://www.hunthelper.com' : 'https://localhost.ssl:5000'),
-          'HH_ENVIRONMENT': JSON.stringify(ENV)
+          HH_ENVIRONMENT: JSON.stringify(ENV),
+          __HOST__: JSON.stringify(packHost),
         }),
       ].concat(args.production ? [
         new webpack.optimize.UglifyJsPlugin()
@@ -53,6 +55,14 @@ gulp.task('scripts', (cb) => {
           options: {
             limit: 25000,
           },
+        },
+        {
+          test: /\.(vue|js)$/,
+          loader: 'string-replace',
+          query: {
+            search: '__HOST__',
+            replace: packHost
+          }
         }]
       },
       resolve: {

@@ -1,7 +1,7 @@
 import axios from 'axios'
 
 const huntHelperApi = axios.create({
-  baseURL: 'https://www.hunthelper.com/',
+  baseURL: 'https://localhost.ssl:5000',
   headers: {
     Accept:         'application/vnd.hunthelper.com; version=1',
     'Content-Type': 'application/json; charset=utf-8',

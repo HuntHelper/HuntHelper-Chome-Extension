@@ -76,6 +76,9 @@ const hunterModule = {
         return state.hunter.email
       return name
     },
+    hunterToken: (state) => {
+      return state.token
+    }
   },
 }
 
